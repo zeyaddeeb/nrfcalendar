@@ -2,6 +2,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 from datetime import datetime
+import calendar
 
 class NRFCalendar(object):
     """ Main class for retail calendar"""
@@ -14,8 +15,8 @@ class NRFCalendar(object):
         self.FIVE_WEEK_MONTHS = [3, 6, 9, 12]
 
     def end_of_year(year):
-      year_end = Date.new((year + 1), 1, -1)
-      wday = (year_end.wday + 1) % 7
+      year_end = datetime((year + 1), 1, 31)
+      wday = (year_end.weekday() + 1) % 7
       if wday > 3:
           year_end += 7 - wday
       else:
