@@ -3,7 +3,7 @@
 
 `nrfcalendar` is a package to manage flags for financial reporting in Retail.
 
-This is still on progress, help is always appreciated
+This is still in progress, help is always appreciated
 
 ## Installation
 
