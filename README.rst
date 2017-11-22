@@ -1,3 +1,18 @@
-This package is in progress.
+# nrfcalendar
+[![Build Status](https://travis-ci.org/thelostscientist/nrfcalendar.svg?branch=master)](https://travis-ci.org/thelostscientist/nrfcalendar)
 
-Inspired by really convoluted reporting structure in Retail.
+`nrfcalendar` is a package to manage flags for financial reporting in Retail.
+
+This is still on progress, help is always appreciated
+
+## Installation
+
+Latest and greatest:
+
+    pip install git+https://github.com/thelostscientist/nrfcalendar.git
+    supports python 3.5+
+
+
+## Inspired by
+
+* [Stitch Fix](https://github.com/stitchfix/merch_calendar)
