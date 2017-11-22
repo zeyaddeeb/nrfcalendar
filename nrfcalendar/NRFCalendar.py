@@ -15,13 +15,62 @@ class NRFCalendar(object):
         self.FIVE_WEEK_MONTHS = [3, 6, 9, 12]
 
     def end_of_year(year):
-      year_end = datetime((year + 1), 1, 31)
-      wday = (year_end.weekday() + 1) % 7
-      if wday > 3:
-          year_end += 7 - wday
-      else:
-        year_end -= wday
-    return year_end
+        y_end = datetime((year + 1), 1, 31)
+        w_day = (year_end.weekday() + 1) % 7
+        if w_day > 3:
+            y_end += 7 - w_day
+        else:
+            y_end -= w_day
+        return y_end
 
     def start_of_year(year):
-      return end_of_year(year - 1) + 1
+        return end_of_year(year - 1) + 1
+
+    def start_of_month(year, merch_month):
+        m_start = start_of_year(year) + int((merch_month - 1) / 3) * 91
+        if merch_month in FOUR_WEEK_MONTHS:
+            m_start = m_start + 28
+        elif merch_month in FIVE_WEEK_MONTHS:
+            m_start = m_start + 63
+        else:
+            print("Invalid merch month")
+        return m_start
+
+    def end_of_month(year, merch_month):
+        if merch_month == 12:
+            y_end = end_of_year(year)
+        else:
+            y_end = start_of_month(year, merch_month + 1) - 1
+        return y_end
+
+    def start_of_week(year, month, merch_week):
+        return start_of_month(year, month) + ((merch_week - 1) * 7)
+
+    def end_of_week(year, month, merch_week):
+        return start_of_month(year, month) + (6 + ((merch_week - 1) * 7))
+
+    def start_of_quarter(year, quarter):
+        if quarter == QUARTER_1:
+            q_start =  start_of_month(year, 1)
+        elif quarter == QUARTER_2:
+            q_start start_of_month(year, 4)
+        elif quarter == QUARTER_3:
+            q_start start_of_month(year, 7)
+        elif quarter == QUARTER_4:
+            q_start start_of_month(year, 10)
+        else:
+            print("Invalid quarter")
+        return q_start
+
+    def end_of_quarter(year, quarter):
+        if quarter == QUARTER_1:
+            q_end = start_of_month(year, 3)
+        elif quarter == QUARTER_2:
+            q_end = start_of_month(year, 6)
+        elif quarter == QUARTER_3:
+            q_end = start_of_month(year, 9)
+        elif quarter == QUARTER_4:
+            q_end = start_of_month(year, 12)
+        else:
+            print("Invalid quarter")
+        return q_end
