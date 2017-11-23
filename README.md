@@ -15,4 +15,4 @@ Latest and greatest:
 
 ## Inspired by
 
-* [Stitch Fix](https://github.com/stitchfix/merch_calendar)
+[Stitch Fix](https://github.com/stitchfix/merch_calendar)
