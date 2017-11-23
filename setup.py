@@ -23,8 +23,8 @@ setup(name='nrfcalendar',
       license='MIT',
       packages=['nrfcalendar'],
       install_requires=[
-          'pandas',
-          'numpy'
+          'calendar',
+          'datetime'
       ]
       include_package_data=True,
       zip_safe=False)
