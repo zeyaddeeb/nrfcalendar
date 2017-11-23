@@ -53,11 +53,11 @@ class NRFCalendar(object):
         if quarter == QUARTER_1:
             q_start =  start_of_month(year, 1)
         elif quarter == QUARTER_2:
-            q_start start_of_month(year, 4)
+            q_start = start_of_month(year, 4)
         elif quarter == QUARTER_3:
-            q_start start_of_month(year, 7)
+            q_start = start_of_month(year, 7)
         elif quarter == QUARTER_4:
-            q_start start_of_month(year, 10)
+            q_start = start_of_month(year, 10)
         else:
             print("Invalid quarter")
         return q_start
