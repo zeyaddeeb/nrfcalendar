@@ -23,8 +23,7 @@ setup(name='nrfcalendar',
       license='MIT',
       packages=['nrfcalendar'],
       install_requires=[
-          'datetime',
-          'lunisolar'
+          'datetime'
       ],
       include_package_data=True,
       zip_safe=False)
