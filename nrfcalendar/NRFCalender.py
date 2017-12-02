@@ -1,7 +1,7 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 QUARTER_1 = 1
@@ -12,7 +12,7 @@ FOUR_WEEK_MONTHS = [2, 5, 8, 11]
 FIVE_WEEK_MONTHS = [3, 6, 9, 12]
 
 def start_of_year(year):
-    return end_of_year(year - 1) + 1
+    return end_of_year(year - 1) + timedelta(days=365)
 
 def end_of_year(year):
     y_end = datetime((year + 1), 1, 31)
@@ -20,11 +20,11 @@ def end_of_year(year):
     if w_day > 3:
         y_end += 7 - w_day
     else:
-        y_end -= w_day
+        y_end -= timedelta(days=w_day)
     return y_end
 
 def start_of_month(year, merch_month):
-    m_start = start_of_year(year) + int(merch_month - 1 / 3) * 91
+    m_start = start_of_year(year) + (int(merch_month - 1 / 3) * 91)
     if merch_month in FOUR_WEEK_MONTHS:
         m_start = m_start + 28
     elif merch_month in FIVE_WEEK_MONTHS:
@@ -69,7 +69,7 @@ def end_of_quarter(year, quarter):
 
 
 def start_of_week(year, month, merch_week):
-    return start_of_month(year, (month + ((merch_week - 1) * 7))
+    return start_of_month(year, (month + ((merch_week - 1) * 7)))
 
 def end_of_week(year, month, merch_week):
     return start_of_month(year, (month + (6 + merch_week - 1) * 7))
