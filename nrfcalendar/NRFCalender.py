@@ -2,7 +2,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 from datetime import date, timedelta
-import pycalcal.pycalcal as pycal
+import lunisolar as pycal
 
 
 def cumsum(alist):
