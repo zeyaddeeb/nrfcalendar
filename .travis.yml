@@ -3,8 +3,6 @@ language: python
 sudo: false
 
 python:
-  - "2.7"
-  - "3.5"
   - "3.6"
 
 install:
@@ -14,14 +12,14 @@ cache:
   - pip
 
 os:
-  - linux
-  - osx
+  - os
 
 branches:
   only:
     - master
-    
+
 env:
-  - PYTHON_VERSION="2.7"
-  - PYTHON_VERSION="3.5"
   - PYTHON_VERSION="3.6"
+
+script:
+ - python --version
