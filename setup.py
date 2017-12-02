@@ -24,7 +24,8 @@ setup(name='nrfcalendar',
       packages=['nrfcalendar'],
       install_requires=[
           'calendar',
-          'datetime'
+          'datetime',
+          'pycalcal'
       ]
       include_package_data=True,
       zip_safe=False)
