@@ -24,7 +24,7 @@ def end_of_year(year):
     return y_end
 
 def start_of_month(year, merch_month):
-    m_start = start_of_year(year) + int((merch_month - 1) / 3) * 91
+    m_start = start_of_year(year) + int(merch_month - 1 / 3) * 91
     if merch_month in FOUR_WEEK_MONTHS:
         m_start = m_start + 28
     elif merch_month in FIVE_WEEK_MONTHS:
@@ -69,10 +69,10 @@ def end_of_quarter(year, quarter):
 
 
 def start_of_week(year, month, merch_week):
-    return start_of_month((year, month) + ((merch_week - 1) * 7))
+    return start_of_month(year, month + ((merch_week - 1) * 7)
 
 def end_of_week(year, month, merch_week):
-    return start_of_month((year, month) + (6 + ((merch_week - 1) * 7)))
+    return start_of_month(year, month + (6 + merch_week - 1) * 7)
 
 
 def quarter(merch_month):
